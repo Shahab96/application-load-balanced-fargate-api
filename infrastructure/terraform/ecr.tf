@@ -13,6 +13,6 @@ resource "null_resource" "this" {
   ]
 
   provisioner "local-exec" {
-    command = "../../deploy.sh"
+    command = "../../deploy.sh ${local.project_prefix}"
   }
 }
