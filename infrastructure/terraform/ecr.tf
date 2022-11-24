@@ -13,6 +13,6 @@ resource "null_resource" "this" {
   ]
 
   provisioner "local-exec" {
-    command = "../../deploy.sh ${local.project_prefix}"
+    command = "../../deploy.sh ${local.project_prefix} ${data.aws_caller_identity.this.account_id} ${data.aws_region.this.name}"
   }
 }
