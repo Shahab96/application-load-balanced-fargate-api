@@ -55,7 +55,7 @@ resource "aws_ecs_task_definition" "this" {
       name  = local.project_prefix
       image = "${aws_ecr_repository.this.repository_url}:${data.aws_ecr_image.this.image_tag}"
       healthCheck = {
-        command  = ["CMD-SHELL", "curl -f http://localhost:3000/ || exit 1"]
+        command  = ["CMD-SHELL", "curl -f http://localhost:${var.container_port}/ || exit 1"]
         interval = 30
         retries  = 3
         timeout  = 5
