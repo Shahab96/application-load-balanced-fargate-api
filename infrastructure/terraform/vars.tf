@@ -1,6 +1,6 @@
-variable "subnet_names" {
-  type    = list(string)
-  default = ["public", "private", "isolated"]
+variable "container_port" {
+  type    = number
+  default = 3000
 }
 
 variable "cidr_block" {
